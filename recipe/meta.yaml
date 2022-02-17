@@ -9,7 +9,7 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f62bb688d70e0afd88c413a8d994bda824e6cebd12b612902d1945c5a67edcd7
   patches:
-    - 0001-Use-conda-sysroot-when-building-recipes.patch  # [linux]
+    - 0001-Use-conda-sysroot-when-building-recipes.patch
 
 build:
   noarch: python
