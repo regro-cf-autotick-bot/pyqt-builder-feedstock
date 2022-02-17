@@ -1,0 +1,14 @@
+--- bindings.py	2021-10-28 04:53:13.000000000 -0500
++++ bindings.py	2022-02-16 20:49:40.470254411 -0500
+@@ -146,6 +146,11 @@
+         buildable.include_dirs.extend(self.include_dirs)
+         buildable.libraries.extend(self.libraries)
+         buildable.library_dirs.extend(self.library_dirs)
++        
++        sysroot = os.environ.get('CONDA_BUILD_SYSROOT', None) 
++        if sysroot is not None:
++            buildable.extra_compile_args.extend([f"-L{sysroot} -Wl,-rpath,{sysroot}"])
++            buildable.extra_link_args.extend([f"-L{sysroot} -Wl,-rpath,{sysroot}"])
+ 
+         if test_source_path is None:
+             # Save the internal test to a file.
