@@ -1,5 +1,5 @@
---- bindings.py	2021-10-28 04:53:13.000000000 -0500
-+++ bindings.py	2022-02-16 20:49:40.470254411 -0500
+--- pyqtbuild/bindings.py	2021-10-28 04:53:13.000000000 -0500
++++ pyqtbuild/bindings.py	2022-02-16 20:49:40.470254411 -0500
 @@ -146,6 +146,11 @@
          buildable.include_dirs.extend(self.include_dirs)
          buildable.libraries.extend(self.libraries)
