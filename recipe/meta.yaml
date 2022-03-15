@@ -10,10 +10,11 @@ source:
   sha256: f62bb688d70e0afd88c413a8d994bda824e6cebd12b612902d1945c5a67edcd7
   patches:
     - patches/0001-Use-conda-sysroot-when-building-recipes.patch
+    - patches/0002-disable-test-execution-cross.patch
 
 build:
   noarch: python
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pyqt-bundle = pyqtbuild.bundle.bundle_main:main
