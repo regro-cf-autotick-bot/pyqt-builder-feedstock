@@ -1,11 +1,11 @@
-About pyqt-builder
-==================
+About pyqt-builder-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyqt-builder-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.riverbankcomputing.com/software/pyqt/
 
 Package license: GPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyqt-builder-feedstock/blob/main/LICENSE.txt)
 
 Summary: The PEP 517 compliant PyQt build system
 
