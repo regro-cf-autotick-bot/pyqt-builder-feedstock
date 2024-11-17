@@ -1,13 +1,13 @@
 {% set name = "PyQt-builder" %}
-{% set version = "1.15.4" %}
+{% set version = "1.16.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 39f8c75db17d9ce17cb6bbf3df1650b5cebc1ea4e5bd73843d21cc96612b2ae1
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
+  sha256: 4515e41ae379be2e54f88a89ecf47cd6e4cac43e862c4abfde18389c2666afdf
   patches:
     - patches/0001-Use-conda-sysroot-when-building-recipes.patch
     - patches/0002-disable-test-execution-cross.patch
