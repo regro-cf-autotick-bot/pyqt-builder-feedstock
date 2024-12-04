@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 39f8c75db17d9ce17cb6bbf3df1650b5cebc1ea4e5bd73843d21cc96612b2ae1
   patches:
     - patches/0001-Use-conda-sysroot-when-building-recipes.patch
@@ -15,7 +15,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pyqt-bundle = pyqtbuild.bundle.bundle_main:main
@@ -23,12 +23,12 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
     - wheel
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - sip
     - packaging
     - toml
@@ -38,6 +38,7 @@ test:
     - pyqtbuild
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
